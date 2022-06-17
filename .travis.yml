@@ -5,13 +5,8 @@ language: generic
 services:
   - docker
 
-env:
-  - DOCKER_USER=jwdo3015
-  - DOCKER_PASS=wjdckdduq149!@
-
 before_install: 
   - echo "start Creating an image with dockerfile"
-  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   - docker build -t jwod3015/docker-react-app -f Dockerfile.dev ./
 
 script:
