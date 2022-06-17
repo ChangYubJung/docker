@@ -10,6 +10,7 @@ before_install:
   - docker build -t jwod3015/docker-react-app -f Dockerfile.dev ./
 
 script:
+  - docker login
   - docker run -e CI=true jwdo3015/docker-react-app npm run test -- --coverage
 
 after_success:
