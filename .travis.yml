@@ -12,6 +12,20 @@ before_install:
 
 script:
   - docker run -e CI=true jwdo3015/docker-react-app npm run test -- --coverage
+#travis-ci 에서 -e 옵션과  CI=true 명령어가 없으면 오류남.
+#------------------test까지만 작성됨-------------------#
 
-after_success:
-  - echo "Test Sucess"
+#------------------배포부분---------------------------#
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker-reace-app"
+  env: "Dockerreaceapp-env"
+  bucket_name: "elasticbeanstalk-us-west-2-788367187729 "
+  bucket_path: "docker-reace-app"
+  on:
+    branch: master
+access_key_id: $ACCESS_KEY
+secret_access_key: $SECURE_ACCESS_KEY 
+#after_success:
+#  - echo "Test Sucess"
