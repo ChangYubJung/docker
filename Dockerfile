@@ -10,7 +10,8 @@ RUN npm install
 
 COPY ./ ./
 
-CMD ["npm", "run", "build"] 
+#CMD ["npm", "run", "build"]
+RUN npm run build
 #여기까지는 build file을 만드는 과정. Builder Stag
 
 #이 밑으로는 Nginx시작 -> 브라우저 요청에 따라 제공!  Run Stage
