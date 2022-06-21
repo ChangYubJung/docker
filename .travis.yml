@@ -8,7 +8,7 @@ services:
 before_install: 
   - echo "start Creating an image with dockerfile"
   - docker login --username "$DOCKER_USER" --password "$DOCKER_PASS"
-  - docker build -t jwod3015/docker-react-app -f Dockerfile.dev ./
+  - docker build -t jwdo3015/docker-react-app -f Dockerfile.dev ./
 
 script:
   - docker run -e CI=true jwdo3015/docker-react-app npm run test -- --coverage
