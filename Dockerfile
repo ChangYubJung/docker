@@ -17,6 +17,8 @@ CMD ["npm", "run", "build"]
 
 FROM nginx
 #nginx 베이스 이미지
+EXPOSE 80
+#nginx default port -> 80   EXPOSE -> 포트맵핑.
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html 
 # --from=[이름] -> 다른 stage에 있는 file 복사할때 stage 명시
 #/usr/src/app/build 에 있는 파일 /usr/share/nginx/html 에 복사
