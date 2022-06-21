@@ -21,7 +21,7 @@ deploy:
   region: "us-west-2"
   app: "docker-reace-app"
   env: "Dockerreaceapp-env"
-  bucket_name: "elasticbeanstalk-us-west-2-788367187729 "
+  bucket_name: "elasticbeanstalk-us-west-2-788367187729"
   bucket_path: "docker-reace-app"
   on:
     branch: master
